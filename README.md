@@ -1,9 +1,9 @@
 # talmud-bavli-text
 
 Talmud Bavli from Mechon Mamre, converted from original htm files to txt files.
-_Tremendous gratitude to all those who worked on the Mechon Mamre version. 
+Tremendous gratitude to all those who worked on the Mechon Mamre version. 
 
-I needed a copy of the Talmud Bavli that I could work with. So here it is._
+I needed a copy of the Talmud Bavli that I could work with. So here it is.
 
 mechon_mamre_converter.rb - ruby conversion program. requires making base directories before use. will error nicely. appends to files, does not rewrite them from scratch, so be sure to delete old output files before running. Output files can be found here. No need to run this.
 
@@ -21,5 +21,5 @@ torah_or/ - a list of the quotations that were referenced on each amud. Sorry, j
 
 toldos_aharon.csv - an index of all the quotations in the talmud. Sorry, just book and chapter number, no verse number.
 
-_The accuracy of this work hinges entirely on the accuracy and consistancy of the Mechon Mamre version. (And obviously the accuracy of my conversions.)
+The accuracy of this work hinges entirely on the accuracy and consistancy of the Mechon Mamre version. (And obviously the accuracy of my conversions.)
 
