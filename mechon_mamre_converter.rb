@@ -28,7 +28,7 @@ end
 def fix_name(old_name)
   old_name = old_name.split(',')
   daf = Gematria::Calculator.new(old_name[0], :hebrew)
-  daf = daf.converted.to_s
+  daf = pad_zero(daf.converted.to_s)
   amud = Gematria::Calculator.new(old_name[1], :hebrew)
   amud = amud.converted.to_s
   daf + '.' + amud
@@ -39,6 +39,10 @@ def append_file(f_name, f_text)
   f = File.open(f_name, 'a')
   f.write(f_text + "\n")
   f.close
+end
+
+def pad_zero(f_name)
+  f_name.r_just(3, '0')
 end
 
 def sections(section, new_name, section_name)
@@ -64,9 +68,9 @@ def clean_amud_text(amud_text)
 end
 
 def clean_section_name(section_name)
-  if section_name == 'משנה'
+  if section_name == ' משנה'
     then "מתני'"
-  elsif section_name == 'גמרא'
+  elsif section_name == ' גמרא'
     then "גמ'"
   end
 end
@@ -82,7 +86,7 @@ def clean_sections(section, new_name, section_name)
   append_file(@clean_txt_dir + new_name, amud_text.strip)
 end
 
-@f_names = Dir['./html/*.htm']
+@f_names = Dir['./htm/*.htm']
 
 @f_names[2..-1].each do |f_name|
   htm = read_htm(f_name)
